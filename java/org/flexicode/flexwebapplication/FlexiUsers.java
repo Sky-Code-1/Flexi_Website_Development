@@ -4,6 +4,15 @@ import java.util.Date;
 
 public class FlexiUsers {
 
+    /**
+     * A simple construction of a flexi user that takes
+     * no argument or attribute of the flexi user into
+     * account before creating the user.
+     * This constructor is created for the main reason
+     * of acquiring a user from the database.
+     */
+    public FlexiUsers(){}
+
 
     public FlexiUsers(
             String username,
@@ -44,7 +53,13 @@ public class FlexiUsers {
     public String getUsername() {
         return username;
     }
-
+    protected int userId;
+    public void setUserId(int userId){
+        this.userId = userId;
+    }
+    public int getUserId(){
+        return userId;
+    }
     public String getPassword() {
         return password;
     }
@@ -62,6 +77,9 @@ public class FlexiUsers {
     }
     public String getLanguage(){
         return language;
+    }
+    public void setLanguage(String language){
+        this.language = language;
     }
     public void setUsername(String username) {
         this.username = username;
@@ -119,14 +137,15 @@ public class FlexiUsers {
 
     @Override
     public String toString() {
-        return "Username : " + username +
+        return  "User ID = " + userId +
+                "\nUsername : " + username +
                 "\nFirst Name : " + firstName +
                 "\nMiddle Name : " + middleName +
                 "\nLast Name : " + lastName +
                 "\nEmail : " + email +
                 "\nCountry : " + country +
                 "\nD.O.B : " + dateOfBirth +
-                "\n Language : " + language;
+                "\nLanguage : " + language;
     }
 
 }

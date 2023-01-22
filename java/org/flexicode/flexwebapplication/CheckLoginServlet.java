@@ -33,6 +33,10 @@ public class CheckLoginServlet extends HttpServlet {
                   request.setAttribute("username", username);
                   request.setAttribute("password",password);
                   rdSuccess.forward(request,response);
+                  HttpSession session = request.getSession();
+                  session.setAttribute("logged_in", loggedIn);
+                  session.setAttribute("username", username);
+                  session.setAttribute("password", password);
               }
               else
                   rdFailed.forward(request,response);

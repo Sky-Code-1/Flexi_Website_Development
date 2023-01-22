@@ -43,7 +43,10 @@ public class CreateAccountServlet extends HttpServlet {
         out.println("<h2> Hello " + username + " your Flexi app account has been created successfully</h2>");
         out.println("<br><br><br><br><br><br>");
         out.println("Click on the link below to access your home page ");
-        out.println("<input type=\"submit\" value=\"Homepage\"");
+        out.println("<input type=\"submit\"" + "value=\"Homepage\"" + "formaction=\"welcome-home.jsp\">");
+        out.println("</body>");
+        HttpSession session = request.getSession();
+        session.setAttribute("username", username);
     }
 
     @Override
@@ -51,7 +54,4 @@ public class CreateAccountServlet extends HttpServlet {
        doGet(request,response);
     }
 
-    void createAccount() throws Exception{
-
-    }
 }
